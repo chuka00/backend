@@ -14,6 +14,7 @@ namespace Core.AutoMapperConfig
         public AutoMapperConfigProfile()
         {
             CreateMap<CompanyCreateDto, Company>();
+            CreateMap<Company, CompanyGetDto>();
 
         }
     }
