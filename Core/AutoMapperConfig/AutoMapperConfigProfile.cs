@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core.Dtos.Company;
+using Core.Dtos.Job;
 using Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,14 @@ namespace Core.AutoMapperConfig
     {
         public AutoMapperConfigProfile()
         {
+            // Company
             CreateMap<CompanyCreateDto, Company>();
             CreateMap<Company, CompanyGetDto>();
+
+            // Job
+            CreateMap<JobCreateDto, Job>();
+            CreateMap<Job, JobGetDto>()
+                .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name));
 
         }
     }
