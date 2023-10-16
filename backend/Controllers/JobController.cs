@@ -21,8 +21,7 @@ namespace backend.Controllers
             _mapper = mapper;
         }
 
-        // CRUD 
-
+        
         // Create
         [HttpPost]
         [Route("Create")]

@@ -21,6 +21,7 @@ namespace backend.Controllers
             _mapper = mapper;
         }
 
+        //Create
         [HttpPost]
         [Route("Create")]
         public async Task<IActionResult> CreateCompany([FromBody]CompanyCreateDto dto)
@@ -31,6 +32,8 @@ namespace backend.Controllers
             return Ok("Company is successfully created");
         }
 
+
+        //Read
         [HttpGet]
         [Route("Get")]
         public async Task<ActionResult<IEnumerable<CompanyGetDto>>> GetCompanies()
