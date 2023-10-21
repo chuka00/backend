@@ -2,7 +2,6 @@
 using Core.AutoMapperConfig;
 using Core.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using System.Text.Json.Serialization;
 
 namespace backend
@@ -33,6 +32,14 @@ namespace backend
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors(options =>
+            {
+                options
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
 
             app.UseHttpsRedirection();
 
